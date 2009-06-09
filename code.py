@@ -1,9 +1,10 @@
+## Code by Andres Vargas para cotemar
+## programadorti07@cotemar.com.mx
+## 09/06/2009
+
 from reportlab.graphics.barcode.widgets import BarcodeCode128
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics import renderPDF
-
-
-
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph, Frame
 from reportlab.lib.units import mm
