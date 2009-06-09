@@ -13,13 +13,13 @@ from reportlab.graphics.barcode import code128
 import os,sys
 
 
-def run(rfc_list):
+def run(rfc_list= "", pdf_file="barcode.pdf"):
     try:
-        os.remove("barcode.pdf")
+        os.remove(pdf_file)
     except:
         pass
 
-    c = Canvas("barcode.pdf")
+    c = Canvas(pdf_file)
 
     c.setFontSize(size="7")
 
