@@ -8,24 +8,21 @@ from reportlab.graphics import renderPDF
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph, Frame
 from reportlab.lib.units import mm
-
 from reportlab.graphics.barcode import code128
-
 import os,sys
+import easygui
 
 
-def run(rfc_list= "", pdf_file="barcode.pdf"):
+def run(rfc_list= [], pdf_file="barcode.pdf"):
     try:
         os.remove(pdf_file)
     except:
         pass
 
     c = Canvas(pdf_file)
-
     c.setFontSize(size="7")
-
-    for times in range(0,2):
-        print len(rfc_list)
+    print  " %s pag para %s rfcs " % (round(len(rfc_list)/114.0,0), len(rfc_list))
+    for times in range(0,int(round(len(rfc_list)/114.0,0))):
         for i in range(0,6):
             for j in range(1,20):
                 st = code128.Code128()
@@ -42,7 +39,14 @@ def run(rfc_list= "", pdf_file="barcode.pdf"):
                 c.drawString(pos_x+10*mm, pos_y+7*mm , rfc )
         c.showPage()
         c.setFontSize(size="7")
-    c.save()
+
+        try:
+            f = open(pdf_file, "wb")
+            f = close()
+        except IOError:
+            easygui.msgbox("El archivo pdf esta abierto, por lo que no se puede guardar", "Error")
+            sys.exit(0)
+        c.save()
 
 
 if __name__=='__main__':

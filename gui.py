@@ -1,6 +1,6 @@
 ## Code by Andres Vargas para cotemar
 ## programadorti07@cotemar.com.mx
-##
+## 09/06/2009
 
 import easygui
 import sys
