@@ -42,7 +42,6 @@ def run(rfc_list= [], pdf_file="barcode.pdf"):
 
         try:
             f = open(pdf_file, "wb")
-            f = close()
         except IOError:
             easygui.msgbox("El archivo pdf esta abierto, por lo que no se puede guardar", "Error")
             sys.exit(0)
