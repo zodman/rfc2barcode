@@ -88,9 +88,14 @@ def genpdf(filepath,pdf_file):
 def main():
     fileopen = easygui.fileopenbox(msg="Selecciona el archivo cvs",
      filetypes = ["*.csv"])
+    if fileopen is None:
+        error("No se selecciono ningun archivo")
     pdf_file = easygui.filesavebox(msg = "Guardar archivo pdf con codigo de barras",
         default ="barcode.pdf", filetypes=["*.pdf"] )
+    if pdf_file is None:
+        error("No se guardo el archivo")
     genpdf(fileopen,pdf_file)
+    easygui.msgbox("Archivo generado")
     #genpdf("archivo.csv","barcode.pdf")
 if __name__ == "__main__":
     main()
