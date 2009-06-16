@@ -86,7 +86,7 @@ def genpdf(filepath,pdf_file):
     run(get_rfcs(filepath), pdf_file)
 
 def main():
-    fileopen = easygui.fileopenbox(msg="Selecciona el archivo cvs",
+    fileopen = easygui.fileopenbox(msg="Selecciona el archivo csv",
      filetypes = ["*.csv"])
     if fileopen is None:
         error("No se selecciono ningun archivo")
