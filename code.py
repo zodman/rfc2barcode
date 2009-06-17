@@ -13,7 +13,7 @@ import os,sys
 import easygui
 
 
-def run(rfc_list= [], pdf_file="barcode.pdf"):
+def run(rfc_list= ["1111","22222"], pdf_file="barcode.pdf"):
     try:
         os.remove(pdf_file)
     except:
